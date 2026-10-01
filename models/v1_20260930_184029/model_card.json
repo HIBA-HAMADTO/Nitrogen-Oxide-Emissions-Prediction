@@ -1,0 +1,76 @@
+{
+  "model_name": "Random Forest",
+  "model_version": "v1_20260930_184029",
+  "timestamp": "20260930_184029",
+  "dataset": "Gas Turbine Emissions",
+  "target": "NOX",
+  "performance": {
+    "test_r2": 0.8895359761984711,
+    "test_rmse": 3.8259940528308523,
+    "test_mae": 2.464990203257566,
+    "train_r2": 0.9845396913836151,
+    "val_r2": 0.8973779942574818,
+    "cv_r2_mean": 0.8823904458909968,
+    "cv_r2_std": 0.004750897077515489
+  },
+  "data_info": {
+    "total_samples": 36733,
+    "train_samples": 23508,
+    "val_samples": 5878,
+    "test_samples": 7347,
+    "n_features": 19,
+    "feature_names": [
+      "AT",
+      "AP",
+      "AH",
+      "AFDP",
+      "GTEP",
+      "TIT",
+      "TAT",
+      "TEY",
+      "CDP",
+      "CO"
+    ]
+  },
+  "model_config": {
+    "model_class": "Random Forest",
+    "hyperparameters": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "criterion": "squared_error",
+      "max_depth": null,
+      "max_features": "log2",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 1,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 300,
+      "n_jobs": -1,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "preprocessing": {
+    "steps": [
+      "AdvancedFeatureEngineering (6 new features)",
+      "OutlierHandling (IQR method)",
+      "RobustScaler (outlier-resistant scaling)"
+    ],
+    "outlier_factor": 1.5
+  },
+  "deployment": {
+    "status": "Ready for Production",
+    "recommendations": [
+        "Monitor prediction errors in production",
+        "Retrain periodically with new data"
+    ]
+}
+}
+
+
+
